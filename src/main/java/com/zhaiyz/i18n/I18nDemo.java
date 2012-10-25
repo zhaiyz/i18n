@@ -1,6 +1,7 @@
 package com.zhaiyz.i18n;
 
 import java.text.MessageFormat;
+import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -12,7 +13,7 @@ public class I18nDemo {
 	public static void main(String[] args) {
 
 		// 获得系统默认的国家/语言环境
-		Locale myLocale = new Locale("en", "US");
+		Locale myLocale = new Locale("zh", "CN");
 
 		// 根据指定的国家/语言环境加载对应的资源文件
 		ResourceBundle bundle = ResourceBundle.getBundle(
@@ -23,6 +24,6 @@ public class I18nDemo {
 		
 		String msg = bundle.getString("msg");
 		
-		System.out.println(MessageFormat.format(msg,"Java"));
+		System.out.println(MessageFormat.format(msg,"Java", new Date()));
 	}
 }
